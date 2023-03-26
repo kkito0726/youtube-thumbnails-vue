@@ -1,10 +1,17 @@
-<template>vue.js</template>
+<template><TopBar /></template>
 
 <script>
+import TopBar from "./components/TopBar.vue";
 export default {
   name: "App",
-  components: {},
+  components: {
+    TopBar,
+  },
 };
 </script>
 
-<style></style>
+<style>
+* {
+  margin: 0;
+}
+</style>
