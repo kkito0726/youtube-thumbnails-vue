@@ -1,0 +1,100 @@
+<template>
+  <div class="main">
+    <div class="mainWrapper">
+      <div
+        v-for="(videoData, index) in videoDataArray"
+        :key="index"
+        class="video"
+      >
+        <a
+          :href="`https://www.youtube.com/watch?v=${videoData.videoId}`"
+          class="videoLink"
+        >
+          <div class="videoContainer">
+            <div class="videoContainerWrapper">
+              <div className="videoImg">
+                <img :src="videoData.thumbnail" alt="" className="img" />
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "SearchResult",
+  props: {
+    videoDataArray: Object,
+  },
+};
+</script>
+
+<style>
+.main {
+  flex: 9.5;
+}
+
+.videoContainerWrapper:hover {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+.videoContainer {
+  padding: 10px;
+}
+
+.videoContainerWrapper {
+  box-shadow: 5px 3px 5px 0px rgba(0, 0, 0, 0.4);
+  /* margin-bottom: 10px; */
+  display: flex;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.img {
+  margin-left: 5px;
+  width: 200px;
+  border-radius: 5px;
+}
+
+.desc {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.publishTime {
+  font-size: smaller;
+}
+
+.videoTitle {
+  font-size: large;
+  font-weight: 550;
+}
+
+.resultHr {
+  margin: 5px 0;
+}
+
+.VideoDescription {
+  font-size: 12px;
+}
+
+.videoInfo {
+  font-size: smaller;
+  font-weight: 550;
+}
+
+.videoInfo:hover {
+  color: rgb(111, 170, 169);
+  text-decoration: underline;
+}
+</style>

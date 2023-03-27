@@ -41,7 +41,7 @@ export default {
       console.log(this.q);
       const res = await fetch(`http://localhost:8080/api/search/${this.q}`);
       this.searchDataArray = await res.json();
-      console.log(this.searchDataArray);
+      this.$emit("catchVideoData", this.searchDataArray);
     },
   },
 };
