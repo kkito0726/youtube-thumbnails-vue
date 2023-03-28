@@ -15,6 +15,19 @@
               <div className="videoImg">
                 <img :src="videoData.thumbnail" alt="" className="img" />
               </div>
+              <div class="desc">
+                <span class="videoTitle">
+                  {{ videoData.videoTitle }}
+                </span>
+                <span class="channelTitle">
+                  {{ videoData.channelTitle }}
+                </span>
+                <hr class="resultHr" />
+                <span class="VideoDescription">
+                  {{ videoData.description }}
+                </span>
+                <span class="videoInfo">詳細はこちら</span>
+              </div>
             </div>
           </div>
         </a>

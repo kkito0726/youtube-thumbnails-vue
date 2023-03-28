@@ -5,14 +5,14 @@
     </div>
     <div className="topbarBar">
       <Search className="topbarIcon" />
-      <input v-model="q" type="text" className="topbarInput" />
-      <button
-        @click="handleSearch"
-        className="topbarButton"
-        placeholder="検索ワードを入力"
-      >
-        検索
-      </button>
+
+      <input
+        v-model="q"
+        type="text"
+        className="topbarInput"
+        :placeholder="placeholder"
+      />
+      <button @click="handleSearch" className="topbarButton">検索</button>
     </div>
     <div className="topbarBarRight">
       <div className="topbarIcons">
@@ -32,6 +32,7 @@ export default {
   },
   data() {
     return {
+      placeholder: "検索ワードを入力",
       q: "",
       searchDataArray: [],
     };
