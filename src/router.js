@@ -3,7 +3,7 @@ import StartPage from "@/pages/StartPage.vue";
 
 const routes = [
   {
-    path: "/ho",
+    path: "/",
     name: "StartPage",
     comments: StartPage,
   },
