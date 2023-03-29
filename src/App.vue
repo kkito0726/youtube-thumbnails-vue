@@ -1,47 +1,13 @@
 <template>
-  <div class="home">
-    <TopBar @catchVideoData="handleVideo" />
-
-    <div class="mainContainer">
-      <SideBar />
-      <SearchResult :videoDataArray="videoDataArray" />
-    </div>
-    {{ videoDataArray }}
-  </div>
+  <StartPage />
 </template>
 
 <script>
-import TopBar from "./components/TopBar.vue";
-import SideBar from "./components/SideBar.vue";
-import SearchResult from "./components/SearchResult.vue";
+import StartPage from "./pages/StartPage.vue";
 export default {
   name: "App",
   components: {
-    TopBar,
-    SideBar,
-    SearchResult,
-  },
-  data() {
-    return {
-      videoDataArray: [],
-    };
-  },
-  methods: {
-    handleVideo(searchDataArray) {
-      this.videoDataArray = searchDataArray;
-      console.log(this.videoDataArray);
-    },
+    StartPage,
   },
 };
 </script>
-
-<style>
-* {
-  margin: 0;
-}
-
-.mainContainer {
-  display: flex;
-  flex-direction: row;
-}
-</style>
