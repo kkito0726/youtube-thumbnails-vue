@@ -26,7 +26,9 @@
                 <span class="VideoDescription">
                   {{ videoData.description }}
                 </span>
-                <span class="videoInfo">詳細はこちら</span>
+                <router-link v-bind:to="`videoInfo/${videoData.videoId}`"
+                  ><span class="videoInfo">詳細はこちら</span></router-link
+                >
               </div>
             </div>
           </div>

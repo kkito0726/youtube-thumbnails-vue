@@ -30,9 +30,11 @@ export default {
   components: {
     Search,
   },
+  props: {
+    placeholder: String,
+  },
   data() {
     return {
-      placeholder: "検索ワードを入力",
       q: "",
       searchDataArray: [],
     };

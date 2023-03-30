@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <TopBar @catchVideoData="handleVideo" />
+    <TopBar @catchVideoData="handleVideo" placeholder="検索ワードを入力" />
 
     <div class="mainContainer">
       <SideBar />
