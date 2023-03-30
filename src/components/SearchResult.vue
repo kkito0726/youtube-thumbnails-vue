@@ -26,9 +26,9 @@
                 <span class="VideoDescription">
                   {{ videoData.description }}
                 </span>
-                <router-link v-bind:to="`videoInfo/${videoData.videoId}`"
-                  ><span class="videoInfo">詳細はこちら</span></router-link
-                >
+                <v-btn @click="handleClick(videoData)">
+                  <span class="videoInfo">詳細はこちら</span>
+                </v-btn>
               </div>
             </div>
           </div>
@@ -43,6 +43,14 @@ export default {
   name: "SearchResult",
   props: {
     videoDataArray: Object,
+  },
+  methods: {
+    handleClick(videoData) {
+      this.$router.push({
+        name: "videoInfoPage",
+        params: { videoData: videoData },
+      });
+    },
   },
 };
 </script>

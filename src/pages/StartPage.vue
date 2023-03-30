@@ -27,7 +27,7 @@ export default {
   methods: {
     handleVideo(searchDataArray) {
       this.videoDataArray = searchDataArray;
-      console.log(this.videoDataArray);
+      console.log(this.videoDataArray[5]);
     },
   },
 };
