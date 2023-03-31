@@ -7,6 +7,7 @@ const routes = [
     path: "/",
     name: "startPage",
     component: StartPage,
+    props: true,
   },
   {
     path: "/videoInfo",

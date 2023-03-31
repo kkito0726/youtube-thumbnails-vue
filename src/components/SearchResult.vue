@@ -6,33 +6,44 @@
         :key="index"
         class="video"
       >
-        <a
-          :href="`https://www.youtube.com/watch?v=${videoData.videoId}`"
-          class="videoLink"
-        >
-          <div class="videoContainer">
-            <div class="videoContainerWrapper">
-              <div className="videoImg">
-                <img :src="videoData.thumbnail" alt="" className="img" />
-              </div>
-              <div class="desc">
+        <div class="videoContainer">
+          <div class="videoContainerWrapper">
+            <div className="videoImg">
+              <img :src="videoData.thumbnail" alt="" className="img" />
+            </div>
+            <div class="desc">
+              <a
+                :href="`https://www.youtube.com/watch?v=${videoData.videoId}`"
+                class="videoLink"
+              >
                 <span class="videoTitle">
                   {{ videoData.videoTitle }}
                 </span>
-                <span class="channelTitle">
-                  {{ videoData.channelTitle }}
-                </span>
-                <hr class="resultHr" />
-                <span class="VideoDescription">
-                  {{ videoData.description }}
-                </span>
-                <v-btn @click="handleClick(videoData)">
-                  <span class="videoInfo">詳細はこちら</span>
-                </v-btn>
-              </div>
+              </a>
+              <span class="channelTitle">
+                {{ videoData.channelTitle }}
+              </span>
+              <hr class="resultHr" />
+              <span class="VideoDescription">
+                {{ videoData.description }}
+              </span>
+              <router-link
+                :to="{
+                  name: 'videoInfoPage',
+                  query: {
+                    thumbnail: videoData.thumbnail,
+                    videoId: videoData.videoId,
+                    videoTitle: videoData.videoTitle,
+                    channelTitle: videoData.channelTitle,
+                    description: videoData.description,
+                  },
+                }"
+              >
+                <span class="videoInfo">詳細はこちら</span>
+              </router-link>
             </div>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </div>
@@ -48,7 +59,7 @@ export default {
     handleClick(videoData) {
       this.$router.push({
         name: "videoInfoPage",
-        params: { videoData: videoData },
+        query: { videoData: videoData, test: "テスト" },
       });
     },
   },

@@ -1,9 +1,110 @@
 <template>
-  <div class="main"></div>
+  <div class="main">
+    <a :href="`https://www.youtube.com/watch?v=${videoData.videoId}`">
+      <div class="videoInfoContainer">
+        <div class="videoInfoWrapper">
+          <div class="thumbnail">
+            <img :src="videoData.thumbnail" alt="" />
+          </div>
+          <div class="videoDesc">
+            <span class="videoTitle">{{ videoData.videoTitle }}</span>
+            <span class="channelTitle">{{ videoData.channelTitle }}</span>
+            <span class="description">{{ videoData.description }}</span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
 </template>
 
 <script>
 export default {
   name: "VideoInfo",
+  props: ["videoData"],
 };
 </script>
+
+<style>
+.main {
+  flex: 9;
+}
+
+.videoInfoContainer {
+  padding: 10px;
+}
+
+.videoInfoWrapper {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 5px 3px 5px 0px rgba(0, 0, 0, 0.4);
+  display: flex;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.thumbnail {
+  flex: 4;
+}
+
+.videoDesc {
+  flex: 8;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 20px;
+}
+
+.commentContainer {
+  padding: 10px;
+}
+
+.commentWrapper {
+  padding: 20px;
+  box-shadow: 5px 3px 5px 0px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+}
+
+.commentTitle {
+  font-size: large;
+  font-weight: 550;
+}
+
+.commentUser {
+  display: flex;
+  align-items: center;
+}
+
+.comment {
+  padding: 5px 10px;
+}
+
+.profileImg {
+  width: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.authorName {
+  font-weight: 550;
+}
+
+.commentPublishedAt {
+  font-size: smaller;
+  margin-left: 5px;
+}
+
+.commentMain {
+  padding: 10px;
+}
+
+.commentBottom {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.likes {
+  margin-left: 5px;
+}
+</style>
