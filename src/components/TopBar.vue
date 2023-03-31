@@ -1,7 +1,9 @@
 <template>
   <div className="topbarWrapper">
     <div className="topbarLeft">
-      <span className="topbarTitle">YouTube サムネイル</span>
+      <router-link to="/">
+        <span className="topbarTitle">YouTube サムネイル</span>
+      </router-link>
     </div>
     <div className="topbarBar">
       <Search className="topbarIcon" />
