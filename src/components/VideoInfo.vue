@@ -1,3 +1,5 @@
+import CommentsView from './CommentsView.vue';
+
 <template>
   <div class="main">
     <a :href="`https://www.youtube.com/watch?v=${videoData.videoId}`">
@@ -14,13 +16,17 @@
         </div>
       </div>
     </a>
+    <CommentsView :videoId="videoData.videoId" />
   </div>
 </template>
 
 <script>
+import CommentsView from "./CommentsView.vue";
+
 export default {
   name: "VideoInfo",
   props: ["videoData"],
+  components: { CommentsView },
 };
 </script>
 
@@ -52,59 +58,5 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 5px 20px;
-}
-
-.commentContainer {
-  padding: 10px;
-}
-
-.commentWrapper {
-  padding: 20px;
-  box-shadow: 5px 3px 5px 0px rgba(0, 0, 0, 0.4);
-  display: flex;
-  flex-direction: column;
-  transition: all 0.3s;
-}
-
-.commentTitle {
-  font-size: large;
-  font-weight: 550;
-}
-
-.commentUser {
-  display: flex;
-  align-items: center;
-}
-
-.comment {
-  padding: 5px 10px;
-}
-
-.profileImg {
-  width: 30px;
-  border-radius: 50%;
-  margin-right: 5px;
-}
-.authorName {
-  font-weight: 550;
-}
-
-.commentPublishedAt {
-  font-size: smaller;
-  margin-left: 5px;
-}
-
-.commentMain {
-  padding: 10px;
-}
-
-.commentBottom {
-  display: flex;
-  align-items: center;
-  margin-left: 5px;
-}
-
-.likes {
-  margin-left: 5px;
 }
 </style>
