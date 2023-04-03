@@ -34,6 +34,7 @@ export default {
   },
   props: {
     placeholder: String,
+    searchUrl: String,
   },
   data() {
     return {
@@ -43,8 +44,8 @@ export default {
   },
   methods: {
     async handleSearch() {
-      console.log(this.q);
-      const res = await fetch(`http://localhost:8080/api/search/${this.q}`);
+      console.log(this.searchUrl + this.q);
+      const res = await fetch(this.searchUrl + this.q);
       this.searchDataArray = await res.json();
       this.$emit("catchVideoData", this.searchDataArray);
     },

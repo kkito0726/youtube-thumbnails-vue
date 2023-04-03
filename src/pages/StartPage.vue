@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    <TopBar @catchVideoData="handleVideo" placeholder="検索ワードを入力" />
+    <TopBar
+      @catchVideoData="handleVideo"
+      placeholder="検索ワードを入力"
+      searchUrl="http://localhost:8080/api/search/"
+    />
 
     <div class="mainContainer">
       <SideBar />
