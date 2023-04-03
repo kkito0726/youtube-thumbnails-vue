@@ -1,12 +1,19 @@
 import { createRouter, createWebHistory } from "vue-router";
 import StartPage from "@/pages/StartPage.vue";
 import VideoInfoPage from "@/pages/VideoInfoPage.vue";
+import SearchByChannelURLPage from "@/pages/SearchByChannelURLPage.vue";
 
 const routes = [
   {
     path: "/",
     name: "startPage",
     component: StartPage,
+    props: true,
+  },
+  {
+    path: "/searchByChannelUrl",
+    name: "searchByChannelUrlPage",
+    component: SearchByChannelURLPage,
     props: true,
   },
   {

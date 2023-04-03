@@ -2,15 +2,19 @@
   <div className="sidebar">
     <div className="sidebarWrapper">
       <ul className="sidebarList">
-        <li className="sidebarListItem">
-          <Search className="sidebarIcon" />
-          <span className="sidebarListItemText">キーワードで検索</span>
-        </li>
+        <router-link to="/">
+          <li className="sidebarListItem">
+            <Search className="sidebarIcon" />
+            <span className="sidebarListItemText">キーワードで検索</span>
+          </li>
+        </router-link>
 
-        <li className="sidebarListItem">
-          <LiveTvIcon className="sidebarIcon" />
-          <span className="sidebarListItemText">チャンネルURLで検索</span>
-        </li>
+        <router-link to="/searchByChannelUrl">
+          <li className="sidebarListItem">
+            <LiveTvIcon className="sidebarIcon" />
+            <span className="sidebarListItemText">チャンネルURLで検索</span>
+          </li>
+        </router-link>
 
         <li className="sidebarListItem">
           <VideocamIcon className="sidebarIcon" />

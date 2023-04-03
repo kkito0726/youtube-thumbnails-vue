@@ -2,8 +2,8 @@
   <div class="home">
     <TopBar
       @catchVideoData="handleVideo"
-      placeholder="検索ワードを入力"
-      searchUrl="http://localhost:8080/api/search/"
+      placeholder="チャンネルのURLを入力"
+      searchUrl="http://localhost:8080/api/searchByChannelUrl?channelUrl="
     />
 
     <div class="mainContainer">
@@ -12,12 +12,13 @@
     </div>
   </div>
 </template>
+
 <script>
 import TopBar from "@/components/TopBar.vue";
 import SideBar from "@/components/SideBar.vue";
 import SearchResult from "@/components/SearchResult.vue";
 export default {
-  name: "StartPage",
+  name: "SearchByChannelURLPage",
   components: {
     TopBar,
     SideBar,
