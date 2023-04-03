@@ -14,6 +14,8 @@
               className="profileImg"
             />
             <span class="authorName">{{ comment.authorName }}</span>
+            <span class="commentPublishedAt">{{ comment.publishedAt }}</span>
+            <timeago :datetime="comment.publishedAt"></timeago>
           </div>
 
           <div class="commentMain">
