@@ -6,7 +6,7 @@
       </router-link>
     </div>
     <div className="topbarBar">
-      <Search className="topbarIcon" />
+      <svg-icon type="mdi" :path="path" className="topbarIcon"></svg-icon>
 
       <input
         v-model="q"
@@ -26,11 +26,12 @@
 </template>
 
 <script>
-import { Search } from "@mui/icons-material";
+import SvgIcon from "@jamescoyle/vue-icon";
+import { mdiMagnify } from "@mdi/js";
 export default {
   name: "TopBar",
   components: {
-    Search,
+    SvgIcon,
   },
   props: {
     placeholder: String,
@@ -40,6 +41,7 @@ export default {
     return {
       q: "",
       searchDataArray: [],
+      path: mdiMagnify,
     };
   },
   methods: {

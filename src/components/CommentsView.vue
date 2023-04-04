@@ -23,6 +23,11 @@
           </div>
 
           <div class="commentButton">
+            <svg-icon
+              type="mdi"
+              :path="thumbUpPath"
+              className="likesIcon"
+            ></svg-icon>
             <span class="likes">{{ comment.likeCount }}</span>
           </div>
         </div>
@@ -33,12 +38,16 @@
   </div>
 </template>
 <script>
+import SvgIcon from "@jamescoyle/vue-icon";
+import { mdiThumbUp } from "@mdi/js";
 export default {
   name: "CommentsView",
+  components: { SvgIcon },
   props: ["videoId"],
   data() {
     return {
       comments: "",
+      thumbUpPath: mdiThumbUp,
     };
   },
   methods: {

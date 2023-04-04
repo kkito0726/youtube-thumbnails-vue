@@ -10,10 +10,13 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@jamescoyle/vue-icon": "^0.1.2",
+    "@mdi/js": "^7.2.96",
     "@mui/icons-material": "^5.11.0",
     "core-js": "^3.8.3",
     "styled-components": "^5.3.9",
     "vue": "^3.2.13",
+    "vue-material-design-icons": "^5.2.0",
     "vue-router": "^4.1.6",
     "vue-timeago": "^5.1.3"
   },

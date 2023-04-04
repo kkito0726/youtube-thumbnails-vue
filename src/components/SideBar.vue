@@ -4,20 +4,32 @@
       <ul className="sidebarList">
         <router-link to="/">
           <li className="sidebarListItem">
-            <Search className="sidebarIcon" />
+            <svg-icon
+              type="mdi"
+              :path="magnifyPath"
+              className="sidebarIcon"
+            ></svg-icon>
             <span className="sidebarListItemText">キーワードで検索</span>
           </li>
         </router-link>
 
         <router-link to="/searchByChannelUrl">
           <li className="sidebarListItem">
-            <LiveTvIcon className="sidebarIcon" />
+            <svg-icon
+              type="mdi"
+              :path="televisionClassicPath"
+              className="sidebarIcon"
+            ></svg-icon>
             <span className="sidebarListItemText">チャンネルURLで検索</span>
           </li>
         </router-link>
 
         <li className="sidebarListItem">
-          <VideocamIcon className="sidebarIcon" />
+          <svg-icon
+            type="mdi"
+            :path="videoPath"
+            className="sidebarIcon"
+          ></svg-icon>
           <span className="sidebarListItemText">動画URLで検索</span>
         </li>
       </ul>
@@ -26,20 +38,32 @@
       <ul className="sidebarList">
         <a href="https://www.youtube.com/">
           <li className="sidebarListItem">
-            <Home className="sidebarIcon" />
+            <svg-icon
+              type="mdi"
+              :path="homePath"
+              className="sidebarIcon"
+            ></svg-icon>
             <span className="sidebarListItemText">ホーム</span>
           </li>
         </a>
 
         <a href="https://www.youtube.com/shorts/6hwHXUM_MFE">
           <li className="sidebarListItem">
-            <AppShortcut className="sidebarIcon" />
+            <svg-icon
+              type="mdi"
+              :path="cellPhonePlayPath"
+              className="sidebarIcon"
+            ></svg-icon>
             <span className="sidebarListItemText">ショート</span>
           </li>
         </a>
         <a href="https://www.youtube.com/feed/subscriptions">
           <li className="sidebarListItem">
-            <SmartDisplayIcon className="sidebarIcon" />
+            <svg-icon
+              type="mdi"
+              :path="youtubeSubscriptionPath"
+              className="sidebarIcon"
+            ></svg-icon>
             <span className="sidebarListItemText">登録チャンネル</span>
           </li>
         </a>
@@ -50,13 +74,29 @@
 </template>
 
 <script>
-import { AppShortcut, Home, Search } from "@mui/icons-material";
+import SvgIcon from "@jamescoyle/vue-icon";
+import {
+  mdiMagnify,
+  mdiTelevisionClassic,
+  mdiVideo,
+  mdiHome,
+  mdiCellphonePlay,
+  mdiYoutubeSubscription,
+} from "@mdi/js";
 export default {
   name: "SideBar",
   components: {
-    AppShortcut,
-    Home,
-    Search,
+    SvgIcon,
+  },
+  data() {
+    return {
+      magnifyPath: mdiMagnify,
+      televisionClassicPath: mdiTelevisionClassic,
+      videoPath: mdiVideo,
+      homePath: mdiHome,
+      cellPhonePlayPath: mdiCellphonePlay,
+      youtubeSubscriptionPath: mdiYoutubeSubscription,
+    };
   },
 };
 </script>
